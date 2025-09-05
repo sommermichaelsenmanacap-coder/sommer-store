@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sommer Store - Blox Fruits</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Background Video */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .video-bg iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    /* Dark Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: -1;
+    }
+
+    /* Hero */
+    header {
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      text-shadow: 0 0 25px rgba(255,255,255,0.9);
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Store Grid */
+    .store {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      padding: 50px;
+      z-index: 1;
+    }
+
+    /* Product Cards */
+    .item {
+      background: rgba(20,20,20,0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.08);
+      transition: all 0.35s ease;
+    }
+    .item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 200, 255, 0.9);
+    }
+    .item h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+    .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #00ffcc;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 1rem;
+      background: rgba(0,0,0,0.85);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer strong {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Meteor YouTube Background -->
+  <div class="video-bg">
+    <iframe 
+      src="https://www.youtube.com/embed/G6VVTOcStZE?autoplay=1&mute=1&loop=1&controls=0&playlist=G6VVTOcStZE" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="overlay"></div>
+
+  <!-- Hero -->
+  <header>
+    <h1>🌊 Sommer Store 🌊</h1>
+    <p>Blox Fruits Services</p>
+  </header>
+
+  <!-- Blox Fruits Store -->
+  <div class="store">
+    <div class="item">
+      <h2>Max Level</h2>
+      <p class="price">₱15</p>
+    </div>
+    <div class="item">
+      <h2>Godhuman</h2>
+      <p class="price">₱20</p>
+    </div>
+    <div class="item">
+      <h2>CDK</h2>
+      <p class="price">₱20</p>
+    </div>
+    <div class="item">
+      <h2>Swords</h2>
+      <p class="price">₱15 - ₱20</p>
+    </div>
+    <div class="item">
+      <h2>Fruits</h2>
+      <p class="price">SOON 🍏</p>
+    </div>
+  </div>
+
+  <!-- Footer with GCash -->
+  <footer>
+    <p>© 2025 Sommer Store</p>
+    <p><strong>GCash:</strong> 09153696988</p>
+  </footer>
+</body>
+</html>
