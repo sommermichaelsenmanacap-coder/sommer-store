@@ -11,38 +11,8 @@
       height: 100%;
       font-family: "Poppins", sans-serif;
       color: white;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #000000);
       overflow-x: hidden;
-    }
-
-    /* Background Video */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-      overflow: hidden;
-    }
-    .video-bg iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-    }
-
-    /* Dark Overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: -1;
     }
 
     /* Hero */
@@ -64,16 +34,15 @@
     /* Store Grid */
     .store {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 35px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
       padding: 50px;
-      z-index: 1;
     }
 
     /* Product Cards */
     .item {
-      background: rgba(20,20,20,0.7);
-      backdrop-filter: blur(12px);
+      background: rgba(20,20,20,0.8);
+      backdrop-filter: blur(10px);
       border-radius: 20px;
       padding: 25px;
       text-align: center;
@@ -85,7 +54,7 @@
     }
     .item:hover {
       transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 30px rgba(0, 200, 255, 0.9);
+      box-shadow: 0 0 25px rgba(0, 200, 255, 0.8);
     }
     .item h2 {
       font-size: 1.7rem;
@@ -104,11 +73,8 @@
       text-align: center;
       padding: 25px;
       font-size: 1rem;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.9);
       border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    footer p {
-      margin: 5px 0;
     }
     footer strong {
       color: #00ffcc;
@@ -116,16 +82,6 @@
   </style>
 </head>
 <body>
-  <!-- Meteor YouTube Background -->
-  <div class="video-bg">
-    <iframe 
-      src="https://www.youtube.com/embed/G6VVTOcStZE?autoplay=1&mute=1&loop=1&controls=0&playlist=G6VVTOcStZE" 
-      allow="autoplay; encrypted-media" 
-      allowfullscreen>
-    </iframe>
-  </div>
-  <div class="overlay"></div>
-
   <!-- Hero -->
   <header>
     <h1>🌊 Sommer Store 🌊</h1>
@@ -134,6 +90,7 @@
 
   <!-- Blox Fruits Store -->
   <div class="store">
+    <!-- Main Services -->
     <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
       <h2>Max Level</h2>
       <p class="price">₱15</p>
@@ -150,13 +107,39 @@
       <h2>Swords</h2>
       <p class="price">₱15 - ₱20</p>
     </a>
+
+    <!-- Mastery Services -->
     <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Fruits</h2>
-      <p class="price">SOON 🍏</p>
+      <h2>Mastery 600</h2>
+      <p class="price">₱20</p>
+    </a>
+    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
+      <h2>Mastery 300</h2>
+      <p class="price">₱15</p>
+    </a>
+
+    <!-- Unlocks -->
+    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
+      <h2>Third Sea Unlock</h2>
+      <p class="price">₱25</p>
+    </a>
+
+    <!-- Race Awakenings -->
+    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
+      <h2>Race Awakening V2</h2>
+      <p class="price">₱15</p>
+    </a>
+    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
+      <h2>Race Awakening V3</h2>
+      <p class="price">₱20</p>
+    </a>
+    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
+      <h2>Race Awakening V4</h2>
+      <p class="price">₱30</p>
     </a>
   </div>
 
-  <!-- Footer with GCash -->
+  <!-- Footer -->
   <footer>
     <p>© 2025 Sommer Store</p>
     <p><strong>GCash:</strong> 09153696988</p>
