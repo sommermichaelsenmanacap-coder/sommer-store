@@ -7,14 +7,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; color: #fff; }
-a { text-decoration: none; color: inherit; }
-
-/* Background */
-body {
-  background: linear-gradient(160deg, #0b0c0f, #11141a, #0d0f13 70%);
-  background-attachment: fixed;
+body, html {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  color: #fff;
+  min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, #6a11cb, #2575fc, #a83279, #009fff);
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: gradientShift 15s ease infinite;
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Header */
@@ -28,24 +44,23 @@ header h1 {
   font-size: 3.5rem; 
   font-weight: 900; 
   margin-bottom: 15px; 
-  text-shadow: 0 0 25px rgba(0,255,200,0.8), 0 0 50px rgba(0,200,255,0.5);
+  text-shadow: 0 0 25px rgba(0,0,0,0.8);
 }
 header p {
   font-size: 1.3rem; 
-  opacity: 0.9; 
+  opacity: 0.95; 
   max-width: 900px; 
   margin: auto; 
   line-height: 1.6; 
-  text-shadow: 0 0 10px rgba(0,255,200,0.2);
 }
 
 /* Sections */
 section h2 {
-  color: #00ffcc; 
+  color: #ffdaff; 
   text-align: center; 
   margin-bottom: 30px; 
   font-size: 2.2rem; 
-  text-shadow: 0 0 15px rgba(0,255,200,0.5);
+  text-shadow: 0 0 15px rgba(0,0,0,0.6);
 }
 
 .store {
@@ -61,13 +76,13 @@ section h2 {
 
 /* Items */
 .item {
-  background: rgba(15,15,15,0.85); 
-  backdrop-filter: blur(15px); 
-  border-radius: 25px; 
-  padding: 30px 25px; 
+  background: rgba(15,15,15,0.7); 
+  backdrop-filter: blur(10px); 
+  border-radius: 20px; 
+  padding: 25px; 
   text-align: center; 
   color: white; 
-  border: 2px solid rgba(0,255,200,0.1); 
+  border: 2px solid rgba(255,255,255,0.1); 
   transition: all 0.4s ease; 
   display: block; 
   position: relative; 
@@ -75,25 +90,25 @@ section h2 {
 }
 .item:hover { 
   transform: translateY(-12px) scale(1.05); 
-  box-shadow: 0 0 55px rgba(0, 200, 255, 0.9); 
-  border-color: rgba(0, 255, 200, 0.5); 
+  box-shadow: 0 0 40px rgba(255,255,255,0.4); 
+  border-color: rgba(255,255,255,0.4); 
 }
 
-.item h2 { font-size: 1.9rem; font-weight: 800; margin: 12px 0; }
-.price { font-size: 1.3rem; font-weight: bold; color: #00ffcc; margin-top: 8px; }
+.item h2 { font-size: 1.7rem; font-weight: 800; margin: 12px 0; }
+.price { font-size: 1.3rem; font-weight: bold; color: #ffdaff; margin-top: 8px; }
 .desc { font-size: 1rem; margin-top: 10px; color: rgba(255,255,255,0.85); line-height: 1.5; }
-.badge { position: absolute; top: 15px; right: 15px; background: #00ffcc; color: #000; padding: 5px 10px; font-weight: 700; border-radius: 8px; font-size: 0.9rem; }
-.btn { display: inline-block; padding: 12px 30px; background: #00ffcc; color: #000; font-weight: 700; border-radius: 12px; margin-top: 15px; transition: 0.3s; cursor: pointer;}
-.btn:hover { background: #00d9b3; transform: scale(1.05); }
+.badge { position: absolute; top: 15px; right: 15px; background: #ffdaff; color: #000; padding: 5px 10px; font-weight: 700; border-radius: 8px; font-size: 0.9rem; }
+.btn { display: inline-block; padding: 12px 30px; background: #ffdaff; color: #000; font-weight: 700; border-radius: 12px; margin-top: 15px; transition: 0.3s; cursor: pointer;}
+.btn:hover { background: #ffbdf2; transform: scale(1.05); }
 
-footer { text-align: center; padding: 50px 20px; font-size: 1rem; background: rgba(0,0,0,0.95); border-top: 1px solid rgba(0,255,200,0.2); margin-top: 50px; }
-footer strong { color: #00ffcc; }
-footer a { color: #00ffcc; font-weight: 700; }
+footer { text-align: center; padding: 50px 20px; font-size: 1rem; background: rgba(0,0,0,0.75); border-top: 1px solid rgba(255,255,255,0.2); margin-top: 50px; }
+footer strong { color: #ffdaff; }
+footer a { color: #ffdaff; font-weight: 700; }
 
-@media(max-width:768px) { header h1 { font-size: 2.5rem; } .item { padding: 25px 20px; } }
+@media(max-width:768px) { header h1 { font-size: 2.5rem; } .item { padding: 20px; } }
 
-.section-dark { background: rgba(0,0,0,0.55); padding: 80px 20px; }
-.section-light { background: rgba(15,15,15,0.55); padding: 80px 20px; }
+.section-dark { background: rgba(0,0,0,0.4); padding: 80px 20px; border-radius: 15px; margin: 30px; }
+.section-light { background: rgba(25,25,25,0.4); padding: 80px 20px; border-radius: 15px; margin: 30px; }
 
 </style>
 </head>
@@ -101,129 +116,114 @@ footer a { color: #00ffcc; font-weight: 700; }
 
 <header>
 <h1>🌊 Sommer Store 🌊</h1>
-<p>Welcome to Sommer Store! Level-ups, mastery, race awakenings, melee & defense max boosts, unlocks, and best deals – all in one place! Contact us directly on Facebook for orders.</p>
+<p>Welcome to Sommer Store! Level-ups, mastery, race awakenings, melee & defense max boosts, unlocks, and best deals – all in one place! Use the button below to order via our Buy Panel.</p>
 </header>
 
 <!-- Level Section -->
-<section class="section-dark">
-<h2>Level Packages</h2>
+<section class="section-light">
+<h2>📈 Level Packages</h2>
 <div class="store">
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <div class="badge">🔥 Hot</div>
-  <h2>Max Level</h2>
-  <p class="price">₱30 <s>₱15</s></p>
-  <p class="desc"><strong>First bought: Kobe</strong></p>
-  <span class="btn">Contact on Facebook</span>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <div class="badge">🔥 Max</div>
+  <h2>Level 2600+</h2>
+  <p class="price">₱30</p>
+  <p class="desc"><strong>First bought: Kobe 🏆</strong></p>
+  <span class="btn">Order Now</span>
 </a>
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Level 1500</h2>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Level 2000</h2>
   <p class="price">₱25</p>
-  <span class="btn">Contact on Facebook</span>
+  <span class="btn">Order Now</span>
 </a>
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Level 1000</h2>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Level 1500</h2>
   <p class="price">₱20</p>
-  <span class="btn">Contact on Facebook</span>
+  <span class="btn">Order Now</span>
 </a>
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Level 700</h2>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Level 1000</h2>
   <p class="price">₱15</p>
-  <span class="btn">Contact on Facebook</span>
+  <span class="btn">Order Now</span>
 </a>
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Level 200</h2>
-  <p class="price">₱13</p>
-  <span class="btn">Contact on Facebook</span>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Level 500</h2>
+  <p class="price">₱10</p>
+  <span class="btn">Order Now</span>
 </a>
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Level 150</h2>
-  <p class="price">₱11</p>
-  <span class="btn">Contact on Facebook</span>
-</a>
-
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
   <h2>Level 100</h2>
-  <p class="price">₱9</p>
-  <span class="btn">Contact on Facebook</span>
-</a>
-
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Level 50</h2>
   <p class="price">₱7</p>
-  <span class="btn">Contact on Facebook</span>
+  <span class="btn">Order Now</span>
 </a>
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Level 25</h2>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Level 20</h2>
   <p class="price">₱5</p>
-  <span class="btn">Contact on Facebook</span>
+  <span class="btn">Order Now</span>
 </a>
 
 </div>
 </section>
 
-<!-- Best Deals -->
-<section class="section-light">
-<h2>Best Deals</h2>
+<!-- Blox Fruits Services -->
+<section class="section-dark">
+<h2>⚡ Blox Fruits Services</h2>
 <div class="store">
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <div class="badge">💎 Best Deal</div>
-  <h2>Level + Mastery Combo</h2>
-  <p class="price">₱25</p>
-  <span class="btn">Contact on Facebook</span>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <div class="badge">🔥 Popular</div>
+  <h2>Second Sea Unlock</h2>
+  <p class="price">₱10</p>
+  <p class="desc">Unlock access to the 2nd Sea questline and new islands.</p>
+  <span class="btn">Order Now</span>
 </a>
 
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <div class="badge">💎 Best Deal</div>
-  <h2>Race Awakening Bundle</h2>
-  <p class="price">₱50</p>
-  <span class="btn">Contact on Facebook</span>
-</a>
-
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <div class="badge">💎 Best Deal</div>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
   <h2>Third Sea Unlock</h2>
   <p class="price">₱12</p>
-  <span class="btn">Contact on Facebook</span>
+  <p class="desc">Full 3rd Sea unlock with quests done.</p>
+  <span class="btn">Order Now</span>
 </a>
 
-</div>
-</section>
-
-<!-- Melee & Defense -->
-<section class="section-dark">
-<h2>Melee & Defense Enhancements</h2>
-<div class="store">
-
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Melee Level Max</h2>
-  <p class="price">₱20</p>
-  <span class="btn">Contact on Facebook</span>
-</a>
-
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Defense Level Max</h2>
-  <p class="price">₱20</p>
-  <span class="btn">Contact on Facebook</span>
-</a>
-
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Melee Mastery 300</h2>
-  <p class="price">₱12</p>
-  <span class="btn">Contact on Facebook</span>
-</a>
-
-<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
-  <h2>Melee Mastery 600</h2>
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Race Awakening (Any)</h2>
   <p class="price">₱15</p>
-  <span class="btn">Contact on Facebook</span>
+  <p class="desc">Choose: Ghoul, Cyborg, Mink, Human, Fishman Awakening.</p>
+  <span class="btn">Order Now</span>
+</a>
+
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Gun Mastery Boost</h2>
+  <p class="price">₱10</p>
+  <p class="desc">Boost gun mastery up to 400+.</p>
+  <span class="btn">Order Now</span>
+</a>
+
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Sword Mastery Boost</h2>
+  <p class="price">₱12</p>
+  <p class="desc">Boost sword mastery up to 600+.</p>
+  <span class="btn">Order Now</span>
+</a>
+
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Fighting Style Mastery</h2>
+  <p class="price">₱15</p>
+  <p class="desc">Boost mastery for fighting styles like Superhuman, Death Step, Sharkman Karate, etc.</p>
+  <span class="btn">Order Now</span>
+</a>
+
+<a href="https://auctionsommer.github.io/buy.panel/" target="_blank" class="item">
+  <h2>Raid Service (Boss/Chip)</h2>
+  <p class="price">₱8</p>
+  <p class="desc">Raid carried until you unlock rewards.</p>
+  <span class="btn">Order Now</span>
 </a>
 
 </div>
@@ -231,7 +231,7 @@ footer a { color: #00ffcc; font-weight: 700; }
 
 <footer>
 <p>© 2025 Sommer Store</p>
-<p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank">Click Here to Contact</a></p>
+<p><strong>Buy Panel:</strong> <a href="https://auctionsommer.github.io/buy.panel/" target="_blank">Click Here</a></p>
 </footer>
 
 </body>
