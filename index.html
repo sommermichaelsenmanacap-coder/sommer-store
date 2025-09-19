@@ -1,148 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sommer Store - Blox Fruits</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: "Poppins", sans-serif;
-      color: white;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #000000);
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌊 Sommer Store 🌊</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; color: #fff; }
+a { text-decoration: none; color: inherit; }
 
-    /* Hero */
-    header {
-      text-align: center;
-      padding: 80px 20px 50px;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-      text-shadow: 0 0 25px rgba(255,255,255,0.9);
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+/* Background */
+body {
+  background: linear-gradient(160deg, #0b0c0f, #11141a, #0d0f13 70%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
 
-    /* Store Grid */
-    .store {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 50px;
-    }
+/* Header */
+header {
+  text-align: center; 
+  padding: 120px 20px 60px; 
+  position: relative; 
+  z-index: 1;
+}
+header h1 {
+  font-size: 3.5rem; 
+  font-weight: 900; 
+  margin-bottom: 15px; 
+  text-shadow: 0 0 25px rgba(0,255,200,0.8), 0 0 50px rgba(0,200,255,0.5);
+}
+header p {
+  font-size: 1.3rem; 
+  opacity: 0.9; 
+  max-width: 900px; 
+  margin: auto; 
+  line-height: 1.6; 
+  text-shadow: 0 0 10px rgba(0,255,200,0.2);
+}
 
-    /* Product Cards */
-    .item {
-      background: rgba(20,20,20,0.8);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      color: white;
-      border: 2px solid rgba(255,255,255,0.08);
-      transition: all 0.35s ease;
-      text-decoration: none;
-      display: block;
-    }
-    .item:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 25px rgba(0, 200, 255, 0.8);
-    }
-    .item h2 {
-      font-size: 1.7rem;
-      font-weight: 800;
-      margin: 10px 0;
-    }
-    .price {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #00ffcc;
-      margin-top: 10px;
-    }
+/* Sections */
+section h2 {
+  color: #00ffcc; 
+  text-align: center; 
+  margin-bottom: 30px; 
+  font-size: 2.2rem; 
+  text-shadow: 0 0 15px rgba(0,255,200,0.5);
+}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 25px;
-      font-size: 1rem;
-      background: rgba(0,0,0,0.9);
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    footer strong {
-      color: #00ffcc;
-    }
-  </style>
+.store {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 30px; 
+  padding: 50px 30px; 
+  max-width: 1500px; 
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Items */
+.item {
+  background: rgba(15,15,15,0.85); 
+  backdrop-filter: blur(15px); 
+  border-radius: 25px; 
+  padding: 30px 25px; 
+  text-align: center; 
+  color: white; 
+  border: 2px solid rgba(0,255,200,0.1); 
+  transition: all 0.4s ease; 
+  display: block; 
+  position: relative; 
+  overflow: hidden;
+}
+.item:hover { 
+  transform: translateY(-12px) scale(1.05); 
+  box-shadow: 0 0 55px rgba(0, 200, 255, 0.9); 
+  border-color: rgba(0, 255, 200, 0.5); 
+}
+
+.item h2 { font-size: 1.9rem; font-weight: 800; margin: 12px 0; }
+.price { font-size: 1.3rem; font-weight: bold; color: #00ffcc; margin-top: 8px; }
+.desc { font-size: 1rem; margin-top: 10px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+.badge { position: absolute; top: 15px; right: 15px; background: #00ffcc; color: #000; padding: 5px 10px; font-weight: 700; border-radius: 8px; font-size: 0.9rem; }
+.btn { display: inline-block; padding: 12px 30px; background: #00ffcc; color: #000; font-weight: 700; border-radius: 12px; margin-top: 15px; transition: 0.3s; cursor: pointer;}
+.btn:hover { background: #00d9b3; transform: scale(1.05); }
+
+footer { text-align: center; padding: 50px 20px; font-size: 1rem; background: rgba(0,0,0,0.95); border-top: 1px solid rgba(0,255,200,0.2); margin-top: 50px; }
+footer strong { color: #00ffcc; }
+footer a { color: #00ffcc; font-weight: 700; }
+
+@media(max-width:768px) { header h1 { font-size: 2.5rem; } .item { padding: 25px 20px; } }
+
+.section-dark { background: rgba(0,0,0,0.55); padding: 80px 20px; }
+.section-light { background: rgba(15,15,15,0.55); padding: 80px 20px; }
+
+</style>
 </head>
 <body>
-  <!-- Hero -->
-  <header>
-    <h1>🌊 Sommer Store 🌊</h1>
-    <p>Blox Fruits Services</p>
-  </header>
 
-  <!-- Blox Fruits Store -->
-  <div class="store">
-    <!-- Main Services -->
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Max Level</h2>
-      <p class="price">₱15</p>
-    </a>
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Godhuman</h2>
-      <p class="price">₱20</p>
-    </a>
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>CDK</h2>
-      <p class="price">₱20</p>
-    </a>
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Swords</h2>
-      <p class="price">₱15 - ₱20</p>
-    </a>
+<header>
+<h1>🌊 Sommer Store 🌊</h1>
+<p>Welcome to Sommer Store! Level-ups, mastery, race awakenings, melee & defense max boosts, unlocks, and best deals – all in one place! Contact us directly on Facebook for orders.</p>
+</header>
 
-    <!-- Mastery Services -->
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Mastery 600</h2>
-      <p class="price">₱20</p>
-    </a>
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Mastery 300</h2>
-      <p class="price">₱15</p>
-    </a>
+<!-- Level Section -->
+<section class="section-dark">
+<h2>Level Packages</h2>
+<div class="store">
 
-    <!-- Unlocks -->
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Third Sea Unlock</h2>
-      <p class="price">₱25</p>
-    </a>
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <div class="badge">🔥 Hot</div>
+  <h2>Max Level</h2>
+  <p class="price">₱30 <s>₱15</s></p>
+  <p class="desc"><strong>First bought: Kobe</strong></p>
+  <span class="btn">Contact on Facebook</span>
+</a>
 
-    <!-- Race Awakenings -->
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Race Awakening V2</h2>
-      <p class="price">₱15</p>
-    </a>
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Race Awakening V3</h2>
-      <p class="price">₱20</p>
-    </a>
-    <a href="https://www.facebook.com/share/1BGP4Pi7pY/" target="_blank" class="item">
-      <h2>Race Awakening V4</h2>
-      <p class="price">₱30</p>
-    </a>
-  </div>
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 1500</h2>
+  <p class="price">₱25</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Sommer Store</p>
-    <p><strong>GCash:</strong> 09153696988</p>
-  </footer>
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 1000</h2>
+  <p class="price">₱20</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 700</h2>
+  <p class="price">₱15</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 200</h2>
+  <p class="price">₱13</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 150</h2>
+  <p class="price">₱11</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 100</h2>
+  <p class="price">₱9</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 50</h2>
+  <p class="price">₱7</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Level 25</h2>
+  <p class="price">₱5</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+</div>
+</section>
+
+<!-- Best Deals -->
+<section class="section-light">
+<h2>Best Deals</h2>
+<div class="store">
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <div class="badge">💎 Best Deal</div>
+  <h2>Level + Mastery Combo</h2>
+  <p class="price">₱25</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <div class="badge">💎 Best Deal</div>
+  <h2>Race Awakening Bundle</h2>
+  <p class="price">₱50</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <div class="badge">💎 Best Deal</div>
+  <h2>Third Sea Unlock</h2>
+  <p class="price">₱12</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+</div>
+</section>
+
+<!-- Melee & Defense -->
+<section class="section-dark">
+<h2>Melee & Defense Enhancements</h2>
+<div class="store">
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Melee Level Max</h2>
+  <p class="price">₱20</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Defense Level Max</h2>
+  <p class="price">₱20</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Melee Mastery 300</h2>
+  <p class="price">₱12</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+<a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank" class="item">
+  <h2>Melee Mastery 600</h2>
+  <p class="price">₱15</p>
+  <span class="btn">Contact on Facebook</span>
+</a>
+
+</div>
+</section>
+
+<footer>
+<p>© 2025 Sommer Store</p>
+<p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1BGP4Pi7pY" target="_blank">Click Here to Contact</a></p>
+</footer>
+
 </body>
 </html>
